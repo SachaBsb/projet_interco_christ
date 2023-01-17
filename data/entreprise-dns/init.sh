@@ -1,0 +1,16 @@
+#!/bin/sh
+# Debug : affiche commandes dans le terminal
+set -x
+
+# On lui donne une adresse IP dans la DMZ
+  # ip flush dev eth0
+  # ip link set eth0 down
+  # ip addr add 120.0.16.21 dev eth0
+  # ip link set eth0 up
+
+# On lance le serveur
+  # rc-update add unbound
+  # rc-service unbound start
+
+ip r r default via 10.0.0.2
+ip route add 10.128.0.0/9 via 10.0.0.2

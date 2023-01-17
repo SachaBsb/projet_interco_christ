@@ -1,0 +1,19 @@
+  # Service de site web sur le port 80
+  web:
+    environment:
+      HTTPD_ROOT: /usr/local/apache2/htdocs/
+    image: httpd:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./Website:/usr/local/apache2/htdocs/
+
+  # Service de jeu sur le port 5000
+  python_game:
+    image: python:3.8
+    ports:
+        - "5000:5000"
+    volumes:
+    - ./snake:/app
+    entrypoint: /bin/sh -c "pip install flask && python /app/test.py"
+    

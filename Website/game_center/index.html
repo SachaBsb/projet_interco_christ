@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game Center</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const marioButton = document.querySelector("#mario-button");
+        const snakeButton = document.querySelector("#snake-button");
+
+        marioButton.addEventListener("click", function() {
+          window.location.href = "mario-gh-pages/index.html";
+        });
+
+        snakeButton.addEventListener("click", function() {
+          window.location.href = "snake.html";
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class = "banner">
+            <h1>Game Center</h1>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="game-options">
+            <img src="snake-image.png" alt="snake image"> 
+            <button id="snake-button" class="game-button"><a href="snake/snake.html">Play Snake</a></button>
+            <img src="mario-image.png" alt="snake image">
+            <button id="mario-button" class="game-button"><a href="mario-gh-pages/index.html">Play Mario</a></button>
+        </div>
+    </main>
+</body>
+</html>
